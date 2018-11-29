@@ -17,12 +17,12 @@ img_list=[]
 imgnum_list=[]
 alltweets_json=[]
 #Twitter API credentials
-API_key = "Zmojnn1WOWzL4i1PxHsaVs9wY"
-API_secret_key = "hQLfMwdzRpbnS9l70uCA890krpx0b0H1tAwrgqipaQZiZnaW71"
-access_token = "1037500146475560960-DY1WxnNxSuFIisvYySaDxRGAeozZNi"
-access_token_secret = "ojiUeoEFY3nkC71XjQyjKoftzF5AQldnuQP8ITJt6Wiqa"
+API_key = ""
+API_secret_key = ""
+access_token = ""
+access_token_secret = ""
 #Google API credential
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]='/Users/liuknan/PycharmProjects/APIAssignment/KEY.json'
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=''
 
 
 def import_Labels(screen_name,label):
