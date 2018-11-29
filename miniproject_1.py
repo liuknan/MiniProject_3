@@ -9,13 +9,13 @@ import sys
 import subprocess as sp
 import google.cloud.vision
 import pandas as pd
+import pymysql
 from PIL import Image,ImageDraw,ImageFont
 from google.cloud import videointelligence
 same=[]
 img_list=[]
 imgnum_list=[]
 alltweets_json=[]
-most_popular={}
 #Twitter API credentials
 API_key = "Zmojnn1WOWzL4i1PxHsaVs9wY"
 API_secret_key = "hQLfMwdzRpbnS9l70uCA890krpx0b0H1tAwrgqipaQZiZnaW71"
@@ -23,6 +23,20 @@ access_token = "1037500146475560960-DY1WxnNxSuFIisvYySaDxRGAeozZNi"
 access_token_secret = "ojiUeoEFY3nkC71XjQyjKoftzF5AQldnuQP8ITJt6Wiqa"
 #Google API credential
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]='/Users/liuknan/PycharmProjects/APIAssignment/KEY.json'
+
+
+def import_Labels(screen_name,label):
+    db=pymysql.connect("127.0.0.1", "root", "lkn123456", "MiniProject 3")
+    cursor = db.cursor()
+    sql = "INSERT INTO Labels(TwitterAccount,Label) VALUES(\'%s\',\'%s\')" % \
+          (screen_name,label)
+    try:
+        cursor.execute(sql)
+        db.commit()
+    except:
+            db.rollback()
+            db.close()
+
 
 def get_images(screen_name):
     ##authorization
@@ -91,8 +105,8 @@ def video_output():
     ctrcmd='ffmpeg -r 1/2 -i ./photo/img%004d.jpg  -y newvideo.mp4'
     sp.call(ctrcmd,shell=True)
 
-def image_detection():
-    global most_popular
+def image_detection(screen_name):
+    most_popular={}
     # Create a Vision client.
     vision_client = google.cloud.vision.ImageAnnotatorClient()
 
@@ -112,16 +126,17 @@ def image_detection():
         draw = ImageDraw.Draw(im)
         font = ImageFont.truetype('/Library/Fonts/Trattatello.ttf',32)
         x,y=(30,0)
-        print('Labels:')
+        #print('Labels:')
         for label in response.label_annotations:
             draw.text((x,y),label.description,fill='red',font=font)
             y=y+40
             im.save(imgnum_list[i])
+            import_Labels(screen_name,label.description)
             if label.description in most_popular:
                 most_popular[label.description]+=1
             else:
                 most_popular[label.description]=1
-            print(label.description)
+            #print(label.description)
         i=i+1
     return max(most_popular,key=most_popular.get)
 
@@ -225,7 +240,7 @@ if __name__ == '__main__':
                 restart_program()
             else:
                 try:
-                    image_detection()
+                    image_detection(screen_name)
                 except google.auth.exceptions.DefaultCredentialsError:
                     print("Please upload your json file for google credential")
                     sys.exit()
