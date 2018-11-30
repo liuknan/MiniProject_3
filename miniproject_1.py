@@ -11,18 +11,14 @@ import google.cloud.vision
 import pandas as pd
 import pymysql
 from PIL import Image,ImageDraw,ImageFont
+from pymongo import *
 from google.cloud import videointelligence
 same=[]
 img_list=[]
 imgnum_list=[]
 alltweets_json=[]
 #Twitter API credentials
-API_key = ""
-API_secret_key = ""
-access_token = ""
-access_token_secret = ""
 #Google API credential
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=''
 
 
 def import_Labels(screen_name,label):
@@ -36,6 +32,14 @@ def import_Labels(screen_name,label):
     except:
             db.rollback()
             db.close()
+
+
+def mongo_import_Label(screen_name,label):
+    conn = MongoClient('127.0.0.1', 27017)
+    db = conn.MiniProject3
+    my_set = db.Labels
+    my_set.update({"AccountName": screen_name,"Label":label}, {"$set": {"AccountName":screen_name,"label":label}}, True)
+    conn.close()
 
 
 def get_images(screen_name):
@@ -132,6 +136,7 @@ def image_detection(screen_name):
             y=y+40
             im.save(imgnum_list[i])
             import_Labels(screen_name,label.description)
+            mongo_import_Label(screen_name,label.description)
             if label.description in most_popular:
                 most_popular[label.description]+=1
             else:

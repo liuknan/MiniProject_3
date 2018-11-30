@@ -104,8 +104,8 @@ def mongo_AccountInfo(popular):
     conn = MongoClient('127.0.0.1', 27017)
     db = conn.MiniProject3
     my_set = db.TwitterAccount
-    my_set.insert_one({"AccountName": screen_name, "ImgNumber": ImgNumber, "MostPopular": popular, "time":
-        datetime.datetime.now()})
+    my_set.update({"AccountName": screen_name}, {"$set": {"AccountName":screen_name, "ImgNumber":ImgNumber,
+                                                          "MostPopular":popular,"time":datetime.datetime.now()}}, True)
     conn.close()
 
 
