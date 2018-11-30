@@ -71,11 +71,11 @@ def query_Labels(name):
         print("Error: unable to fetch data")
     db.close()
 
-def query_mongo_Twitter(account):
+def query_mongo_Label(label):
     conn = MongoClient('127.0.0.1', 27017)
     db = conn.MiniProject3
-    my_set = db.TwitterAccount
-    for i in my_set.find({"AccountName":account}) :
+    my_set = db.Labels
+    for i in my_set.find({"Label":label}) :
         print(i)
     conn.close()
 
@@ -189,7 +189,7 @@ if __name__ == '__main__':
                     elif move[0] == "SL":
                         query_Labels(move[1])
                     elif move[0] == "ML":
-                        query_mongo_Twitter(move[1])
+                        query_mongo_Label(move[1])
 
                 else:
                     print("Wrong operation\n")

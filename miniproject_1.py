@@ -38,7 +38,7 @@ def mongo_import_Label(screen_name,label):
     conn = MongoClient('127.0.0.1', 27017)
     db = conn.MiniProject3
     my_set = db.Labels
-    my_set.update({"AccountName": screen_name,"Label":label}, {"$set": {"AccountName":screen_name,"label":label}}, True)
+    my_set.update({"AccountName": screen_name,"Label":label}, {"$set": {"AccountName":screen_name,"Label":label}}, True)
     conn.close()
 
 

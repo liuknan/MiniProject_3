@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ad0e308-0737-4ee4-9e0b-d39d08d77c57" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniproject_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniproject_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/img0001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/photo/img0001.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/img0002.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/photo/img0002.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/img0003.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/photo/img0003.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/img0004.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/photo/img0004.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/img0005.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/photo/img0005.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/img0006.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/photo/img0006.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/img0007.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/photo/img0007.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweet.json" beforeDir="false" afterPath="$PROJECT_DIR$/tweet.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,12 +43,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3166" />
+          <entry key="py" value="3198" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1901" />
+          <entry key="Python" value="1933" />
           <entry key="Scratch" value="1265" />
         </counts>
       </usages-collector>
@@ -47,14 +56,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miniproject_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="143" column="60" selection-start-line="143" selection-start-column="60" selection-end-line="143" selection-end-column="60" />
+            <state relative-caret-position="314">
+              <caret line="45" column="100" selection-start-line="45" selection-start-column="100" selection-end-line="45" selection-end-column="100" />
               <folding>
                 <element signature="e#40#87#0" expanded="true" />
-                <marker date="1543596944020" expanded="true" signature="1206:1440" ph="..." />
+                <marker date="1543597128366" expanded="true" signature="1206:1440" ph="..." />
               </folding>
             </state>
           </provider>
@@ -90,16 +99,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miniproject_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+            <state relative-caret-position="311">
+              <caret line="191" column="50" lean-forward="true" selection-start-line="191" selection-start-column="50" selection-end-line="191" selection-end-column="50" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <marker date="1543596714255" expanded="true" signature="118:373" ph="..." />
-                <marker date="1543596714255" expanded="true" signature="868:1052" ph="..." />
-                <marker date="1543596714255" expanded="true" signature="3174:3523" ph="..." />
+                <marker date="1543597233831" expanded="true" signature="118:373" ph="..." />
+                <marker date="1543597233831" expanded="true" signature="868:1052" ph="..." />
+                <marker date="1543597233831" expanded="true" signature="3154:3503" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,8 +136,8 @@
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_14.py" />
-        <option value="$PROJECT_DIR$/miniproject_3.py" />
         <option value="$PROJECT_DIR$/miniproject_1.py" />
+        <option value="$PROJECT_DIR$/miniproject_3.py" />
       </list>
     </option>
   </component>
@@ -182,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.scratch_14">
+  <component name="RunManager" selected="Python.miniproject_3">
     <configuration name="miniproject_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MiniProject_3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -253,8 +262,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.scratch_14" />
         <item itemvalue="Python.miniproject_3" />
+        <item itemvalue="Python.scratch_14" />
         <item itemvalue="Python.scratch" />
       </list>
     </recent_temporary>
@@ -276,12 +285,12 @@
     <frame x="260" y="127" width="1420" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494639" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494639" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3299363" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -349,26 +358,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miniproject_3.py">
+    <entry file="file://$PROJECT_DIR$/miniproject_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+        <state relative-caret-position="314">
+          <caret line="45" column="100" selection-start-line="45" selection-start-column="100" selection-end-line="45" selection-end-column="100" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
-            <marker date="1543596714255" expanded="true" signature="118:373" ph="..." />
-            <marker date="1543596714255" expanded="true" signature="868:1052" ph="..." />
-            <marker date="1543596714255" expanded="true" signature="3174:3523" ph="..." />
+            <element signature="e#40#87#0" expanded="true" />
+            <marker date="1543597128366" expanded="true" signature="1206:1440" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miniproject_1.py">
+    <entry file="file://$PROJECT_DIR$/miniproject_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="143" column="60" selection-start-line="143" selection-start-column="60" selection-end-line="143" selection-end-column="60" />
+        <state relative-caret-position="311">
+          <caret line="191" column="50" lean-forward="true" selection-start-line="191" selection-start-column="50" selection-end-line="191" selection-end-column="50" />
           <folding>
-            <element signature="e#40#87#0" expanded="true" />
-            <marker date="1543596944020" expanded="true" signature="1206:1440" ph="..." />
+            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1543597233831" expanded="true" signature="118:373" ph="..." />
+            <marker date="1543597233831" expanded="true" signature="868:1052" ph="..." />
+            <marker date="1543597233831" expanded="true" signature="3154:3503" ph="..." />
           </folding>
         </state>
       </provider>
