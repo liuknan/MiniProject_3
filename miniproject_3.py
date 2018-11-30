@@ -1,21 +1,19 @@
 from miniproject_1 import *
 import pymysql
 import datetime
-
-API_key = ""
-API_secret_key = ""
-access_token = ""
-access_token_secret = ""
+from pymongo import MongoClient
 
 
-# Google API credential
-
-
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=''
+def mongo_transactions():
+    conn = MongoClient('127.0.0.1', 27017)
+    db = conn.MiniProject3
+    my_set = db.transactions
+    my_set.insert({"UserName":user_name,"AccountName":screen_name,"time":datetime.datetime.now(),"transactions"
+    :transactions})
 
 
 def import_transactions():
-    db=pymysql.connect("127.0.0.1", "root", "lkn123456", "MiniProject 3")
+    db = pymysql.connect("127.0.0.1", "root", "lkn123456", "MiniProject 3")
     cursor = db.cursor()
     sql = "INSERT INTO transactions(UserName,AccountName,time,transactions) VALUES(\'%s\',\'%s\', " \
           "\'%s\',\'%s\')" % (user_name,screen_name,datetime.datetime.now(),transactions)
@@ -27,6 +25,15 @@ def import_transactions():
             db.rollback()
             print("error")
             db.close()
+
+
+def query_mongo_tran(name):
+    conn = MongoClient('127.0.0.1', 27017)
+    db = conn.MiniProject3
+    my_set = db.transactions
+    for i in my_set.find({"AccountName":name}):
+        print(i)
+
 
 def query_transactions(name):
     db = pymysql.connect("127.0.0.1", "root", "lkn123456", "MiniProject 3")
@@ -62,6 +69,13 @@ def query_Labels(name):
         print("Error: unable to fetch data")
     db.close()
 
+def query_mongo_Twitter(account):
+    conn = MongoClient('127.0.0.1', 27017)
+    db = conn.MiniProject3
+    my_set = db.TwitterAccount
+    for i in my_set.find({"AccountName":account}) :
+        print(i)
+
 
 def query_TwitterAccount(account):
     db = pymysql.connect("127.0.0.1", "root", "lkn123456", "MiniProject 3")
@@ -81,6 +95,14 @@ def query_TwitterAccount(account):
     except:
         print("Error: unable to fetch data")
     db.close()
+
+
+def mongo_AccountInfo(popular):
+    conn = MongoClient('127.0.0.1', 27017)
+    db = conn.MiniProject3
+    my_set = db.TwitterAccount
+    my_set.insert({"AccountName": screen_name, "ImgNumber": ImgNumber, "MostPopular": popular, "time":
+        datetime.datetime.now()})
 
 
 def import_AccountInfo(popular):
@@ -135,25 +157,35 @@ if __name__ == '__main__':
                                          "If you want to exit, type 'exit\n"))
                 if transactions == "out":
                     import_transactions()
+                    mongo_transactions()
                     restart_program()
                 elif transactions == "exit":
                     import_transactions()
+                    mongo_transactions()
                     sys.exit()
                 elif transactions == "detect":
                     import_transactions()
+                    mongo_transactions()
                     popular=image_detection(screen_name)
                     import_AccountInfo(popular)
+                    mongo_AccountInfo(popular)
                 elif transactions == "video":
                     import_transactions()
+                    mongo_transactions()
                     video_output()
                 elif transactions == "search":
                     import_transactions()
-                    m = str(input("e.g. T kobebryant or L basketball\n"))
+                    mongo_transactions()
+                    m = str(input("e.g. MT kobebryant or SL basketball\n"))
                     move = m.split()
-                    if m[0] == "T":
+                    if m[0] == "ST":
                         query_transactions(move[1])
-                    if m[0] == "L":
+                    if m[0] == "MT":
+                        query_mongo_tran(move[1])
+                    if m[0] == "SL":
                         query_Labels(move[1])
+                    if m[0] == "ML":
+                        query_mongo_Twitter(move[1])
 
                 else:
                     print("Wrong operation\n")
