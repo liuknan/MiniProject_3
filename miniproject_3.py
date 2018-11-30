@@ -8,8 +8,9 @@ def mongo_transactions():
     conn = MongoClient('127.0.0.1', 27017)
     db = conn.MiniProject3
     my_set = db.transactions
-    my_set.insert({"UserName":user_name,"AccountName":screen_name,"time":datetime.datetime.now(),"transactions"
+    my_set.insert_one({"UserName":user_name,"AccountName":screen_name,"time":datetime.datetime.now(),"transactions"
     :transactions})
+    conn.close()
 
 
 def import_transactions():
@@ -33,6 +34,7 @@ def query_mongo_tran(name):
     my_set = db.transactions
     for i in my_set.find({"AccountName":name}):
         print(i)
+    conn.close()
 
 
 def query_transactions(name):
@@ -75,6 +77,7 @@ def query_mongo_Twitter(account):
     my_set = db.TwitterAccount
     for i in my_set.find({"AccountName":account}) :
         print(i)
+    conn.close()
 
 
 def query_TwitterAccount(account):
@@ -101,8 +104,9 @@ def mongo_AccountInfo(popular):
     conn = MongoClient('127.0.0.1', 27017)
     db = conn.MiniProject3
     my_set = db.TwitterAccount
-    my_set.insert({"AccountName": screen_name, "ImgNumber": ImgNumber, "MostPopular": popular, "time":
+    my_set.insert_one({"AccountName": screen_name, "ImgNumber": ImgNumber, "MostPopular": popular, "time":
         datetime.datetime.now()})
+    conn.close()
 
 
 def import_AccountInfo(popular):
@@ -178,13 +182,13 @@ if __name__ == '__main__':
                     mongo_transactions()
                     m = str(input("e.g. MT kobebryant or SL basketball\n"))
                     move = m.split()
-                    if m[0] == "ST":
+                    if move[0] == "ST":
                         query_transactions(move[1])
-                    if m[0] == "MT":
+                    elif move[0] == "MT":
                         query_mongo_tran(move[1])
-                    if m[0] == "SL":
+                    elif move[0] == "SL":
                         query_Labels(move[1])
-                    if m[0] == "ML":
+                    elif move[0] == "ML":
                         query_mongo_Twitter(move[1])
 
                 else:
